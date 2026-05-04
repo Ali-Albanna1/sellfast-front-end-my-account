@@ -1,0 +1,170 @@
+/* Navbar.module.css */
+
+/* Nav container */
+.nav {
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Left and right sections */
+.leftSection {
+  flex: 1;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+/* List container */
+.list {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Welcome message */
+.welcome {
+  font-weight: 500;
+  color: #6c757d;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.username {
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+/* Navigation links */
+.link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.link:hover {
+  background-color: #f8f9fa;
+  color: #4a90e2;
+  transform: translateY(-1px);
+}
+
+/* Sign in link special style */
+.signInLink {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.signInLink:hover {
+  background-color: #3a7bc8;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+/* Sign out link special style */
+.signOutLink {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  border: 1px solid #f1f3f4;
+}
+
+.signOutLink:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navContainer {
+    padding: 0 0.5rem;
+    height: auto;
+    flex-direction: column;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .leftSection, .rightSection {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rightSection .list {
+    margin-bottom: 0;
+  }
+  
+  .link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .welcome {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0.5rem;
+  }
+  
+  .list {
+    gap: 0.25rem;
+  }
+  
+  .link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .welcome {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    padding: 0.25rem;
+  }
+  
+  .list {
+    gap: 0.125rem;
+  }
+  
+  .link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
