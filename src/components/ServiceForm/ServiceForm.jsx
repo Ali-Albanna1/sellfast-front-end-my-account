@@ -13,7 +13,8 @@ function ServiceForm({ user }) {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
-    price: "",
+    price_min: "",
+    price_max: "",
     duration_minutes: "",
     is_available: true,
     image: ""
@@ -32,7 +33,8 @@ function ServiceForm({ user }) {
         const service = await serviceService.details(id)
         setFormData({
           ...service,
-          price: String(service.price),
+          price_min: String(service.price_min),
+          price_max: String(service.price_max),
           duration_minutes: String(service.duration_minutes)
         })
         setLoading(false)
@@ -50,7 +52,8 @@ function ServiceForm({ user }) {
 
     const payload = {
       ...formData,
-      price: Number(formData.price),
+      price_min: Number(formData.price_min),
+      price_max: Number(formData.price_max),
       duration_minutes: Number(formData.duration_minutes)
     }
 
@@ -111,16 +114,30 @@ function ServiceForm({ user }) {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="price">Price ($):</label>
-            <input 
-              onChange={handleChange} 
-              type="number" 
-              id="price" 
-              name="price" 
-              value={formData.price} 
+            <label htmlFor="price_min">Minimum Price ($):</label>
+            <input
+              onChange={handleChange}
+              type="number"
+              id="price_min"
+              name="price_min"
+              value={formData.price_min}
               min="0"
               step="0.01"
-              required 
+              required
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label htmlFor="price_max">Maximum Price ($):</label>
+            <input
+              onChange={handleChange}
+              type="number"
+              id="price_max"
+              name="price_max"
+              value={formData.price_max}
+              min={formData.price_min || "0"}
+              step="0.01"
+              required
             />
           </div>
 

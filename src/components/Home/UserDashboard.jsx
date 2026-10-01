@@ -210,7 +210,7 @@ const UserDashboard = () => {
                     <div className={styles.bookingDetails}>
                       <div className={styles.bookingDetail}>
                         <span className={styles.bookingDetailIcon}>💰</span>
-                        <span>{booking.service?.price} BHD</span>
+                        <span>{booking.service?.price_min} - {booking.service?.price_max} BHD</span>
                       </div>
                       <div className={styles.bookingDetail}>
                         <span className={styles.bookingDetailIcon}>⏱️</span>
@@ -315,7 +315,7 @@ const UserDashboard = () => {
                 availableServices.map((service) => (
                   <div key={service.id} className={styles.serviceCard}>
                     <h4 className={styles.serviceName}>{service.name}</h4>
-                    <div className={styles.servicePrice}>{service.price} BHD</div>
+                    <div className={styles.servicePrice}>{service.price_min} - {service.price_max} BHD</div>
                     <div className={styles.serviceDuration}>
                       ⏱️ {service.duration_minutes} min
                     </div>

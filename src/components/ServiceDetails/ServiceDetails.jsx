@@ -135,7 +135,7 @@ function ServiceDetails({user}) {
         <div className={styles.infoSection}>
           <div className={styles.serviceHeader}>
             <h2 className={styles.serviceName}>{service.name}</h2>
-            <div className={styles.priceTag}>${service.price}</div>
+            <div className={styles.priceTag}>${service.price_min} - ${service.price_max}</div>
           </div>
 
           <div className={styles.statusInfo}>

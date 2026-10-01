@@ -98,7 +98,7 @@ function MyBooking() {
                 <div className={styles.bookingHeader}>
                   <div className={styles.serviceInfo}>
                     <h3 className={styles.serviceName}>{booking.service.name}</h3>
-                    <div className={styles.priceBadge}>${booking.service.price}</div>
+                    <div className={styles.priceBadge}>${booking.service.price_min} - ${booking.service.price_max}</div>
                   </div>
                   <div className={`${styles.statusBadge} ${getStatusColor(booking.status)}`}>
                     {booking.status}

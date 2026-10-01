@@ -87,7 +87,7 @@ function Service({user}) {
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Price:</span>
-                  <span className={styles.detailValue}>${service.price}</span>
+                  <span className={styles.detailValue}>${service.price_min} - ${service.price_max}</span>
                 </div>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Status:</span>
